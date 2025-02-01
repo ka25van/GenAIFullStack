@@ -9,7 +9,7 @@ generator = pipeline('text-generation', model="distilgpt2")
 @app.route('/generate', methods=['POST'])
 def generate():
     try:
-        data=request.json
+        data=request.json 
         prompt = data.get('input','')
         output=generator(prompt, max_length=500, num_return_sequences=1, truncation=True)
         # print(output)
